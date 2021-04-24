@@ -1,3 +1,4 @@
+r.text
 import requests
 import os
 
@@ -27,4 +28,3 @@ print(r, r.text)
 payload = {'class': 'MK-I'}
 r = requests.get(base_url + '/game/ships', headers=auth_header, params=payload)
 print(r, r.text)
-
