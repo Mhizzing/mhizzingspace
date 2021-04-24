@@ -13,3 +13,6 @@ A fun project to retain my Python knowledge.
 - Implement some form of UI
 - End up rewriting a heap of code
 - Make project public
+- Use a generator expression
+    - Use send/yield combo for some kind of bidirectional communication (between ships?)
+    
