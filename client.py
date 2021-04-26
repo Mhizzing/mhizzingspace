@@ -2,13 +2,15 @@
 
 
 class Client():
-    def __init__(username, password):
+    def __init__(self, username, password):
         self.username = username
         self.password = password
 
     
+    
 
 def main():
+    c = Client()
     return
 
 
