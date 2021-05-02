@@ -1,3 +1,5 @@
+import inspect
+
 class Queue:
     def __init__(self):
         self.queue = []
@@ -6,8 +8,9 @@ class Queue:
     def push(self, item):
         self.queue.append(item)
 
-    def pop(self):
+    def serve(self):
         if self.queue:
+            print(f"I just popped out {self.queue[0]}")
             return self.queue.pop(0)
         else:
             return None
@@ -24,8 +27,20 @@ class Queue:
         else:
             return '0 items in queue.'
 
-test = Queue()
-test.push(1)
-test.push(2)
-test.push(3)
-print(test)
+def menu_gen(a_class):
+    class_functions = inspect.getmembers(a_class, predicate=inspect.isfunction)
+    outstr = ''
+    for i, item in enumerate(class_functions):
+        if item[0][0] != '_':
+            outstr += f'{i}. ' + item[0] + '\n'
+    return(outstr)
+    
+def main():
+    test = Queue()
+    test.push(1)
+    test.push(2)
+    test.push(3)
+    print(test)
+
+if __name__ == "__main__":
+    main()
